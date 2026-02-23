@@ -4,9 +4,17 @@ public:
         if (s.size() != t.size())
             return false;
 
-        sort(s.begin(), s.end());
-        sort(t.begin(), t.end());
+        unordered_map<char,int> x;
+        unordered_map<char,int> y;
 
-        return s == t;
+        for(char c : s)
+        {
+            x[c]++;
+        }
+        for(char c : t)
+        {
+            y[c]++;
+        }
+        return x==y;
     }
 };
